@@ -14,7 +14,7 @@ public class ArrowController : MonoBehaviour
         ExtendScreenFunction extendScreen = new ExtendScreenFunction();
         ScreenBottom = extendScreen.GetScreenBottom();
 
-        Debug.Log(extendScreen.GetScreenBottom());
+        //Debug.Log(extendScreen.GetScreenBottom());
     }
 
     // Update is called once per frame
