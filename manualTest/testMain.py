@@ -9,6 +9,8 @@ class testMain(unittest.TestCase):
         self.assertEqual(input('矢が画面外に出たら矢が消滅しているか(y/n)'),'y')
     def test_decTimer(self):
         self.assertEqual(input('タイマーの数値が時間と共に減少しているか(y/n)'),'y')
+    def test_isCleared(self):
+        self.assertEqual(input('タイマーの数値が0になったらクリア画面に移動するか(y/n)'),'y')
 
 if __name__ == '__main__':
     unittest.main(exit=False)
