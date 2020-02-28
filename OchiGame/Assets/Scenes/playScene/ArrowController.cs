@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ArrowController : MonoBehaviour
 {
+    public GameObject ArrowPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
