@@ -23,7 +23,7 @@ class testMain(unittest.TestCase):
         self.assertEqual(input('ゲームオーバー画面からステージ選択画面に戻れるか(y/n)'),'y')
     def test_canMoveStageSelectSceneInGameClear(self):
         self.assertEqual(input('ステージクリア画面からステージ選択画面に戻れるか(y/n)'),'y')
-
+ 
 if __name__ == '__main__':
     unittest.main(exit=False)
     input()
