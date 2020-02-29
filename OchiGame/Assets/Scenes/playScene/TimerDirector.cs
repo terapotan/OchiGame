@@ -9,6 +9,13 @@ public class TimerDirector : MonoBehaviour
     GameObject TimerValueText;
     private float ElapsedTime = 0.0f;
     private int ElapsedTimeInStage = 5;//単位は秒
+    public int ElapsedTimeInAStage
+    {
+        get
+        {
+            return ElapsedTimeInStage;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -29,4 +36,6 @@ public class TimerDirector : MonoBehaviour
             TimerValueText.GetComponent<Text>().text = ElapsedTimeInStage.ToString();
         }
     }
+
+   
 }
