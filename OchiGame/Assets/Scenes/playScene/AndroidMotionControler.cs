@@ -7,8 +7,8 @@ public class AndroidMotionControler : MonoBehaviour
 {
     private Rigidbody2D Rigid2D;
 
-    private const float ANDROIDKUN_FORCE_SIZE = 50.0f;
-    private const float MAX_SPEED_WALKING_ANDROIDKUN = 3.0f;
+    private const float ANDROIDKUN_FORCE_SIZE = 19.8f;
+    private const float MAX_SPEED_WALKING_ANDROIDKUN = 6.5f;
     private const int RIGHT = 1;
     private const int LEFT = -1;
 

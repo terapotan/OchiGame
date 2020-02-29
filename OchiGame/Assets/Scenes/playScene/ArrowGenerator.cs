@@ -6,7 +6,7 @@ public class ArrowGenerator : MonoBehaviour
 {
 
     public GameObject ArrowPrefab;
-    private const float CycleToGenerateArrow = 0.5f;
+    private const float CycleToGenerateArrow = 1.5f;
     private float ElapsedTime = 0.0f;
 
     // Start is called before the first frame update
@@ -25,7 +25,7 @@ public class ArrowGenerator : MonoBehaviour
             ElapsedTime = 0;
             GameObject tmpGameObject = Instantiate(ArrowPrefab) as GameObject;
             int xGeneratedArrow = Random.Range(-6, 7);
-            tmpGameObject.transform.position = new Vector3(xGeneratedArrow, 8, 0);
+            tmpGameObject.transform.position = new Vector3(xGeneratedArrow, 5.5f, 0);
         }
 
     }
