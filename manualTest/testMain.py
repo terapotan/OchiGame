@@ -17,6 +17,8 @@ class testMain(unittest.TestCase):
     """
     def test_canMoveStageSelectScene(self):
         self.assertEqual(input('タイトル画面からステージ選択画面へ移動出来るか(y/n)'),'y')
+    def test_canMoveGameTitleScene(self):
+        self.assertEqual(input('ステージ選択画面からタイトル画面に移動できるか(y/n)'),'y')
 
 if __name__ == '__main__':
     unittest.main(exit=False)
