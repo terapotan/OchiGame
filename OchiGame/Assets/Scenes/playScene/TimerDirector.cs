@@ -8,7 +8,7 @@ public class TimerDirector : MonoBehaviour
 {
     GameObject TimerValueText;
     private float ElapsedTime = 0.0f;
-    private int ElapsedTimeInStage = 100;//単位は秒
+    private int ElapsedTimeInStage = 5;//単位は秒
 
     // Start is called before the first frame update
     void Start()
