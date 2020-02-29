@@ -16,7 +16,7 @@ public class StageClearControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(TimerDirector.GetComponent<TimerDirector>().ElapsedTimeInAStage < 0)
+        if(TimerDirector.GetComponent<TimerDirector>().ElapsedTimeInAStage <= 0)
         {
             SceneManager.LoadScene("gameClear");
         }

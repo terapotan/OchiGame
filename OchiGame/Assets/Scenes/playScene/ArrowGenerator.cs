@@ -6,7 +6,7 @@ public class ArrowGenerator : MonoBehaviour
 {
 
     public GameObject ArrowPrefab;
-    private const float CycleToGenerateArrow = 1.0f;
+    private const float CycleToGenerateArrow = 0.5f;
     private float ElapsedTime = 0.0f;
 
     // Start is called before the first frame update
