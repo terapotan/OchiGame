@@ -19,6 +19,22 @@
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
   <defs
      id="defs2">
+    <linearGradient
+       id="linearGradient1170"
+       inkscape:collect="always">
+      <stop
+         id="stop1164"
+         offset="0"
+         style="stop-color:#0079c1;stop-opacity:1" />
+      <stop
+         style="stop-color:#8bd3ff;stop-opacity:1"
+         offset="0.49624962"
+         id="stop1166" />
+      <stop
+         id="stop1168"
+         offset="1"
+         style="stop-color:#0076bf;stop-opacity:1" />
+    </linearGradient>
     <marker
        inkscape:isstock="true"
        style="overflow:visible;"
@@ -421,6 +437,16 @@
          stdDeviation="0.90822963"
          id="feGaussianBlur1140" />
     </filter>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1170"
+       id="linearGradient1158"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.3028502,1.7139164e-8,-1.6333088e-8,1.3028502,-416.24769,25.542862)"
+       x1="378.73926"
+       y1="129.75156"
+       x2="378.74661"
+       y2="141.51402" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -430,8 +456,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="341.84135"
-     inkscape:cy="410.36494"
+     inkscape:cx="642.02776"
+     inkscape:cy="374.24229"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -1056,7 +1082,9 @@
     </g>
     <g
        id="g1146"
-       transform="translate(8.6934524,-10.96131)">
+       transform="translate(8.6934524,-10.96131)"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
       <text
          id="text203"
          y="189.76004"
@@ -1081,6 +1109,33 @@
            x="51.737598"
            y="189.76004"
            style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:16.93333244px;font-family:'GenEi Gothic P';-inkscape-font-specification:'GenEi Gothic P Heavy';fill:url(#linearGradient2197);fill-opacity:1;stroke:none;stroke-width:0.20000003;stroke-miterlimit:4;stroke-dasharray:none">GameClear!</tspan></text>
+    </g>
+    <g
+       id="g1176">
+      <text
+         transform="matrix(0.99467091,0.00125922,-0.00235575,1.0053547,9.3549107,16.536458)"
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:13.78849697px;line-height:1.25;font-family:'GenEi Gothic P';-inkscape-font-specification:'GenEi Gothic P Heavy';letter-spacing:0px;word-spacing:0px;display:inline;fill:#99d4e5;fill-opacity:1;stroke:none;stroke-width:0.20000003;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter1138)"
+         x="51.737598"
+         y="189.76004"
+         id="text1150"><tspan
+           sodipodi:role="line"
+           id="tspan1148"
+           x="51.737598"
+           y="189.76004"
+           style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:16.93333244px;font-family:'GenEi Gothic P';-inkscape-font-specification:'GenEi Gothic P Heavy';fill:#99d4e5;fill-opacity:1;stroke:none;stroke-width:0.20000003;stroke-miterlimit:4;stroke-dasharray:none">GameOver...</tspan></text>
+      <text
+         id="text1154"
+         y="206.19659"
+         x="61.181557"
+         style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:13.78849697px;line-height:1.25;font-family:'GenEi Gothic P';-inkscape-font-specification:'GenEi Gothic P Heavy';letter-spacing:0px;word-spacing:0px;display:inline;fill:url(#linearGradient1158);fill-opacity:1;stroke:none;stroke-width:0.20000003;stroke-miterlimit:4;stroke-dasharray:none"
+         xml:space="preserve"
+         transform="matrix(0.99467089,0.00125922,-0.00235575,1.0053547,0,0)"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:16.93333244px;font-family:'GenEi Gothic P';-inkscape-font-specification:'GenEi Gothic P Heavy';fill:url(#linearGradient1158);fill-opacity:1;stroke:none;stroke-width:0.20000003;stroke-miterlimit:4;stroke-dasharray:none"
+           y="206.19659"
+           x="61.181557"
+           id="tspan1152"
+           sodipodi:role="line">GameOver...</tspan></text>
     </g>
   </g>
 </svg>

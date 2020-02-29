@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AndroidMotionControler : MonoBehaviour
 {
@@ -32,6 +33,14 @@ public class AndroidMotionControler : MonoBehaviour
         if(nowSpeedWalkingAndroidkun < MAX_SPEED_WALKING_ANDROIDKUN)
         {
             Rigid2D.AddForce(transform.right * AndroidKunDirection * ANDROIDKUN_FORCE_SIZE);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Arrow")
+        {
+            SceneManager.LoadScene("gameOver");
         }
     }
 }

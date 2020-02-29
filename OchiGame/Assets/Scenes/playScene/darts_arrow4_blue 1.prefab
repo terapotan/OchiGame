@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6937983675851544387}
   m_Layer: 8
   m_Name: darts_arrow4_blue 1
-  m_TagString: Untagged
+  m_TagString: Arrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,4 +149,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f355c7211af0dab4e8d2bc5d9a8c93b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ArrowPrefab: {fileID: 0}
