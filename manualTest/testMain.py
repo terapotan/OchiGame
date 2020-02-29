@@ -11,6 +11,8 @@ class testMain(unittest.TestCase):
         self.assertEqual(input('タイマーの数値が時間と共に減少しているか(y/n)'),'y')
     def test_isCleared(self):
         self.assertEqual(input('タイマーの数値が0になったらクリア画面に移動するか(y/n)'),'y')
+    def test_isGameOvered(self):
+        self.assertEqual(input('ドロイド君が矢に当たったらゲームオーバー画面に飛ぶか(y/n)'),'y')
 
 if __name__ == '__main__':
     unittest.main(exit=False)
