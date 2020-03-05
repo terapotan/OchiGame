@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArrowGenerator : MonoBehaviour
+public class FallEventGenerator : MonoBehaviour
 {
 
     public GameObject ArrowPrefab;
