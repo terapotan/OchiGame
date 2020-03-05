@@ -13,10 +13,10 @@ public class FalledItemGenerator : MonoBehaviour
 
     private int[] ProbabilityList = 
     {
-        25,
-        25,
-        25,
-        25
+        80,
+        10,
+        5,
+        5
     };
 
     public void Start()
