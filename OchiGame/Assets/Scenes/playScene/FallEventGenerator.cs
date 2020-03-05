@@ -5,7 +5,7 @@ using UnityEngine;
 public class FallEventGenerator : MonoBehaviour
 {
 
-    private const float CycleToGenerateArrow = 1.5f;
+    private const float CycleToGenerateArrow = 0.5f;
     private float ElapsedTime = 0.0f;
     private GameObject ItemGenerator;
 
