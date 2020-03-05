@@ -5,14 +5,14 @@ using UnityEngine;
 public class FallEventGenerator : MonoBehaviour
 {
 
-    public GameObject ArrowPrefab;
     private const float CycleToGenerateArrow = 1.5f;
     private float ElapsedTime = 0.0f;
+    private GameObject ItemGenerator;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        ItemGenerator = GameObject.Find("ItemGenerator");
     }
 
     // Update is called once per frame
@@ -23,9 +23,7 @@ public class FallEventGenerator : MonoBehaviour
         if(ElapsedTime > CycleToGenerateArrow)
         {
             ElapsedTime = 0;
-            GameObject tmpGameObject = Instantiate(ArrowPrefab) as GameObject;
-            int xGeneratedArrow = Random.Range(-6, 7);
-            tmpGameObject.transform.position = new Vector3(xGeneratedArrow, 5.5f, 0);
+            ItemGenerator.GetComponent<FalledItemGenerator>().GenerateFalledItem();
         }
 
     }
