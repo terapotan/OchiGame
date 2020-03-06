@@ -33,6 +33,10 @@ public class AndroidMotionControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //FIXME:if文だらけで汚いコードだが、完成まで時間がない
+        //とりあえず今回はこれ以上ここはいじらないと思うので
+        //そのままにしておく。もしここを変更するときがあったら
+        //その時こそリファクタリングしよう。
         int AndroidKunDirection = 0;
 
         if(transform.position.y >= ANDROIDKUN_INITIAL_Y_POSITION)
