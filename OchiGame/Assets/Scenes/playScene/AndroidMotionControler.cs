@@ -72,7 +72,17 @@ public class AndroidMotionControler : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        IPossibleToCollisionProcessWithDroid processWithDroid = InstanceConverter.ToCollisionProcessInstance(collision.gameObject.tag);
+        string GameObjectTag = collision.gameObject.tag;
+
+        if (GameObjectTag != "Untagged")
+        {
+            Destroy(collision.gameObject);
+        }
+
+        IPossibleToCollisionProcessWithDroid processWithDroid = InstanceConverter.ToCollisionProcessInstance(GameObjectTag);
+        
+
+
         processWithDroid?.DoCollisionProcess();
     }
 }
