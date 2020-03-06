@@ -8,15 +8,17 @@ public class FalledItemGenerator : MonoBehaviour
     public GameObject StarPrefab;
     public GameObject SpeedUpPrefab;
     public GameObject SpeedDownPrefab;
+    public GameObject BulletPrefab;
 
     private GameObject[] FallingItems;
 
     private int[] ProbabilityList = 
     {
-        80,
-        10,
-        5,
-        5
+        70,//Arrow
+        10,//Star
+        5,//SpeedUp
+        5,//SpeedDown
+        10//Bullet
     };
 
     public void Start()
@@ -26,7 +28,8 @@ public class FalledItemGenerator : MonoBehaviour
             ArrowPrefab,
             StarPrefab,
             SpeedUpPrefab,
-            SpeedDownPrefab
+            SpeedDownPrefab,
+            BulletPrefab
         };
     }
 
