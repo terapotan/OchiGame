@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Arrow
+  - SpeedUp
+  - SpeedDown
+  - Star
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -16,8 +20,8 @@ TagManager:
   - 
   - Arrows
   - Floor
-  - 
-  - 
+  - Item
+  - Player
   - 
   - 
   - 
