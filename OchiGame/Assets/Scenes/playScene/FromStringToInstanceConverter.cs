@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class FromStringToInstanceConverter
 {
-    public void test()
-    {
+    private Dictionary<string, IPossibleToCollisionProcessWithDroid> InstancePairs;
 
+    public FromStringToInstanceConverter()
+    {
+        InstancePairs["Arrow"] = new CollisionProcessingWithArrow();
+    }
+
+    public IPossibleToCollisionProcessWithDroid ToCollisionProcessInstance(string KeyString)
+    {
+        return InstancePairs[KeyString];
     }
 }

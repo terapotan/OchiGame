@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class AndroidMotionControler : MonoBehaviour
 {
     private Rigidbody2D Rigid2D;
+    private FromStringToInstanceConverter InstanceConverter;
 
     private const float ANDROIDKUN_FORCE_SIZE = 19.8f;
     private float AndroidKunForceSize = ANDROIDKUN_FORCE_SIZE;
@@ -27,6 +28,7 @@ public class AndroidMotionControler : MonoBehaviour
     void Start()
     {
         Rigid2D = GetComponent<Rigidbody2D>();
+        InstanceConverter = new FromStringToInstanceConverter();
         //ANDROIDKUN_INITIAL_Y_POSITION = transform.position.y;
     }
 
@@ -70,10 +72,7 @@ public class AndroidMotionControler : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Arrow")
-        {
-            IPossibleToCollisionProcessWithDroid processWithDroid = new CollisionProcessingWithArrow();
-            processWithDroid.DoCollisionProcess();
-        }
+        IPossibleToCollisionProcessWithDroid processWithDroid = InstanceConverter.ToCollisionProcessInstance(collision.gameObject.tag);
+        processWithDroid.DoCollisionProcess();
     }
 }
