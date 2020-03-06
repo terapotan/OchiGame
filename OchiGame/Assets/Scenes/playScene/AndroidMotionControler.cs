@@ -72,7 +72,8 @@ public class AndroidMotionControler : MonoBehaviour
     {
         if(collision.gameObject.tag == "Arrow")
         {
-            SceneManager.LoadScene("gameOver");
+            IPossibleToCollisionProcessWithDroid processWithDroid = new CollisionProcessingWithArrow();
+            processWithDroid.DoCollisionProcess();
         }
     }
 }
