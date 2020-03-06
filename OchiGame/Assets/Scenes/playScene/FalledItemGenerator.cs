@@ -14,10 +14,10 @@ public class FalledItemGenerator : MonoBehaviour
 
     private int[] ProbabilityList = 
     {
-        70,//Arrow
+        60,//Arrow
         10,//Star
-        5,//SpeedUp
-        5,//SpeedDown
+        10,//SpeedUp
+        10,//SpeedDown
         10//Bullet
     };
 

@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 438398944}
   - component: {fileID: 438398943}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: ItemStack2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 455396494}
   - component: {fileID: 455396493}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: ItemStack3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -867,7 +867,7 @@ GameObject:
   - component: {fileID: 1013249176}
   - component: {fileID: 1013249175}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ItemStack1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1364,6 +1364,8 @@ MonoBehaviour:
   SpeedUpPrefab: {fileID: 4595612195470414239, guid: 4a095f211f52e704ebd566ee918e63bb,
     type: 3}
   SpeedDownPrefab: {fileID: 5410706064147977055, guid: a249d729f02a9254d90f44e4d12ac178,
+    type: 3}
+  BulletPrefab: {fileID: 4201314675505650711, guid: d46cfd4bcbd2b0047ac0828f4c5dd5ff,
     type: 3}
 --- !u!4 &1751521718
 Transform:
