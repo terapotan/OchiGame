@@ -11,6 +11,8 @@ class itemActionTest(unittest.TestCase):
         self.assertEqual(input('矢は落ちてくるか(y/n)'),'y')
     def test_fallHinotama(self):
         self.assertEqual(input('火の玉は落ちてくるか(y/n)'),'y')
+    def test_destroyItem(self):
+        self.assertEqual(input('アイテム落下後一定時間で消滅するか(y/n)'),'y')
     """
     def test_isCheckedCollisionStar(self):
         self.assertEqual(input('ドロイド君とスターが当たったときStarと表示されるか(y/n)'),'y')
