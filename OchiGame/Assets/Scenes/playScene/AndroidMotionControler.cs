@@ -14,6 +14,8 @@ public class AndroidMotionControler : MonoBehaviour
     private const float ANDROIDKUN_FORCE_SIZE_DURING_JUMP = 5.0f;
 
     private const float MAX_SPEED_WALKING_ANDROIDKUN = 6.5f;
+    private float MaxSpeedWalkingAndroidKun = MAX_SPEED_WALKING_ANDROIDKUN;
+
     private const float ANDROIDKUN_JUMPFORCE_SIZE = 280.0f;
 
     private float ANDROIDKUN_INITIAL_Y_POSITION = -2.5f;
@@ -70,7 +72,7 @@ public class AndroidMotionControler : MonoBehaviour
 
         float nowSpeedWalkingAndroidkun = Mathf.Abs(Rigid2D.velocity.x + Rigid2D.velocity.y);
 
-        if(nowSpeedWalkingAndroidkun < MAX_SPEED_WALKING_ANDROIDKUN)
+        if(nowSpeedWalkingAndroidkun < MaxSpeedWalkingAndroidKun)
         {
             if (IsDuringJump)
             {
@@ -92,5 +94,15 @@ public class AndroidMotionControler : MonoBehaviour
 
         IPossibleToCollisionProcessWithDroid processWithDroid = InstanceConverter.ToCollisionProcessInstance(GameObjectTag);
         processWithDroid?.DoCollisionProcess();
+    }
+
+    public void slowDroidSpeed()
+    {
+        MaxSpeedWalkingAndroidKun = MAX_SPEED_WALKING_ANDROIDKUN * 0.5f;
+    }
+
+    public void ReturnToOriginalDroidSpeed()
+    {
+        MaxSpeedWalkingAndroidKun = MAX_SPEED_WALKING_ANDROIDKUN;
     }
 }

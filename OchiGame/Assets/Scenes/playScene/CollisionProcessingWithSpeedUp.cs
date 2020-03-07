@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class CollisionProcessingWithSpeedUp : IPossibleToCollisionProcessWithDroid
 {
 
     public void DoCollisionProcess()
     {
-        Debug.Log("SpeedUp");
+        GameObject.Find("android_kun").GetComponent<AndroidMotionControler>().ReturnToOriginalDroidSpeed();
+        GameObject.Find("SpeedDownIcon").GetComponent<Image>().enabled = false;
     }
 }

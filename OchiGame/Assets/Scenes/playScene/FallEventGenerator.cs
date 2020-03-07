@@ -5,7 +5,7 @@ using UnityEngine;
 public class FallEventGenerator : MonoBehaviour
 {
 
-    private const float CycleToGenerateArrow = 0.5f;
+    private float CycleToGenerateArrow;
     private float ElapsedTime = 0.0f;
     private GameObject ItemGenerator;
     private GameObject StageDataContainer;
@@ -34,5 +34,10 @@ public class FallEventGenerator : MonoBehaviour
             ItemGenerator.GetComponent<FalledItemGenerator>().GenerateFalledItem();
         }
 
+    }
+
+    public void SetCycleToGenerateArrow(float SetValue)
+    {
+        CycleToGenerateArrow = SetValue;
     }
 }
