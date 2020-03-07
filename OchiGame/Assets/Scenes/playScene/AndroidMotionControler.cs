@@ -23,18 +23,29 @@ public class AndroidMotionControler : MonoBehaviour
     private const int RIGHT = 1;
     private const int LEFT = -1;
 
+    private GameObject StageDataContainer;
 
     // Start is called before the first frame update
     void Start()
     {
         Rigid2D = GetComponent<Rigidbody2D>();
         InstanceConverter = new FromStringToInstanceConverter();
+
+        StageDataContainer = GameObject.Find("StageDataContainer");
+
         //ANDROIDKUN_INITIAL_Y_POSITION = transform.position.y;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //ゲームプレイが始まる前であれば以下の移動処理を無効化する。
+        //FIXME:この条件文、プレイしているときにもずっと走っている
+        //何とかプレイする前だけこの条件文を走らせたい。
+        if (StageDataContainer.GetComponent<StageDataContainer>().GetBeforePlayStageBeginning())
+        {
+            return;
+        }
         //FIXME:if文だらけで汚いコードだが、完成まで時間がない
         //とりあえず今回はこれ以上ここはいじらないと思うので
         //そのままにしておく。もしここを変更するときがあったら
@@ -80,9 +91,6 @@ public class AndroidMotionControler : MonoBehaviour
         }
 
         IPossibleToCollisionProcessWithDroid processWithDroid = InstanceConverter.ToCollisionProcessInstance(GameObjectTag);
-        
-
-
         processWithDroid?.DoCollisionProcess();
     }
 }
