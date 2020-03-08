@@ -11,18 +11,26 @@ public class FalledItemGenerator : MonoBehaviour
     public GameObject BulletPrefab;
 
     private GameObject[] FallingItems;
+    private GameObject StageDataContainer;
 
-    private int[] ProbabilityList = 
-    {
-        60,//Arrow
-        10,//Star
-        10,//SpeedUp
-        10,//SpeedDown
-        10//Bullet
-    };
+
+    private int[] ProbabilityList;
 
     public void Start()
     {
+        StageDataContainer = GameObject.Find("StageDataContainer");
+        ProbabilityList = new int[5];
+
+        //FIXME:どこかにも書いた気がするが、ここは値を一つずつ受け取るのではなく
+        //構造体か何かで受け取ったほうがいいだろう。
+        //ステージデータ保管クラスからの値の読み出し
+        ProbabilityList[0] = StageDataContainer.GetComponent<StageDataContainer>().ProbabilityFallArrow;
+        ProbabilityList[1] = StageDataContainer.GetComponent<StageDataContainer>().ProbabilityFallStar;
+        ProbabilityList[2] = StageDataContainer.GetComponent<StageDataContainer>().ProbabilityFallSpeedUp;
+        ProbabilityList[3] = StageDataContainer.GetComponent<StageDataContainer>().ProbabilityFallSpeedDown;
+        ProbabilityList[4] = StageDataContainer.GetComponent<StageDataContainer>().ProbabilityFallBullet;
+
+
         FallingItems = new GameObject[]
         {
             ArrowPrefab,
@@ -51,6 +59,7 @@ public class FalledItemGenerator : MonoBehaviour
     /// </summary>
     /// <param name="probabilityList"></param>
     /// <returns></returns>
+    //TODO:後でこの関数が正常に動作するか試験する必要があるだろう。
     private int CalculateProbabilistic(int[] ProbabilityList)
     {
         int ReturnedIndex = 0;
