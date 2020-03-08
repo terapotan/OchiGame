@@ -10,6 +10,7 @@ public class CollisionProcessingWithSpeedUp : IPossibleToCollisionProcessWithDro
     public void DoCollisionProcess()
     {
         GameObject.Find("android_kun").GetComponent<AndroidMotionControler>().ReturnToOriginalDroidSpeed();
+        GameObject.Find("android_kun").GetComponent<AndroidMotionControler>().PlayGettingItemSound();
         GameObject.Find("SpeedDownIcon").GetComponent<Image>().enabled = false;
     }
 }

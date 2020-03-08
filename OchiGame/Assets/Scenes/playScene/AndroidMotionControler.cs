@@ -7,6 +7,7 @@ public class AndroidMotionControler : MonoBehaviour
 {
     private Rigidbody2D Rigid2D;
     private FromStringToInstanceConverter InstanceConverter;
+    public AudioClip GettingItemSound;
 
     private const float ANDROIDKUN_FORCE_SIZE = 19.8f;
     private float AndroidKunForceSize = ANDROIDKUN_FORCE_SIZE;
@@ -98,11 +99,18 @@ public class AndroidMotionControler : MonoBehaviour
 
     public void slowDroidSpeed()
     {
-        MaxSpeedWalkingAndroidKun = MAX_SPEED_WALKING_ANDROIDKUN * 0.5f;
+        MaxSpeedWalkingAndroidKun = MAX_SPEED_WALKING_ANDROIDKUN * 0.35f;
     }
 
     public void ReturnToOriginalDroidSpeed()
     {
         MaxSpeedWalkingAndroidKun = MAX_SPEED_WALKING_ANDROIDKUN;
+    }
+
+    //FIXME:このメソッドは本来ここにあるべきではない。
+    //当たり判定処理側に持ってくるべきだ。が、時間がないためひとまずこうする。
+    public void PlayGettingItemSound()
+    {
+        GetComponent<AudioSource>().PlayOneShot(GettingItemSound);
     }
 }

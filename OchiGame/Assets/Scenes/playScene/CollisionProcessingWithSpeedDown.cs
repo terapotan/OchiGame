@@ -8,6 +8,7 @@ public class CollisionProcessingWithSpeedDown : IPossibleToCollisionProcessWithD
     public void DoCollisionProcess()
     {
         GameObject.Find("android_kun").GetComponent<AndroidMotionControler>().slowDroidSpeed();
+        GameObject.Find("android_kun").GetComponent<AndroidMotionControler>().PlayGettingItemSound();
         GameObject.Find("SpeedDownIcon").GetComponent<Image>().enabled = true;
 
     }

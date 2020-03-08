@@ -20,7 +20,8 @@ public class StageInitializer : MonoBehaviour
 {
     private GameObject StageDataContainer;
     private StageDataStruct[] StageDataList;
-
+    private bool CheckFlag = false;//FIXME:後でいい名前を考えよう。
+    public AudioClip PlayMusic;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,31 +33,31 @@ public class StageInitializer : MonoBehaviour
         //ファイルにデータを置いて置き、それをロードする形にしたほうがいいだろう。
         
         //EasyStage
-        StageDataList[0].ProbabilityFallArrow       = 0;
+        StageDataList[0].ProbabilityFallArrow       = 100;
         StageDataList[0].ProbabilityFallStar        = 0;
-        StageDataList[0].ProbabilityFallSpeedUp     = 50;
-        StageDataList[0].ProbabilityFallSpeedDown   = 50;
+        StageDataList[0].ProbabilityFallSpeedUp     = 0;
+        StageDataList[0].ProbabilityFallSpeedDown   = 0;
         StageDataList[0].ProbabilityFallBullet      = 0;
-        StageDataList[0].StageLimitTime             = 30;
-        StageDataList[0].CycleToGenerateItems       = 0.5f;
+        StageDataList[0].StageLimitTime             = 10;
+        StageDataList[0].CycleToGenerateItems       = 0.95f;
 
         //NormalStage
-        StageDataList[1].ProbabilityFallArrow       = 80;
-        StageDataList[1].ProbabilityFallStar        = 10;
+        StageDataList[1].ProbabilityFallArrow       = 90;
+        StageDataList[1].ProbabilityFallStar        = 0;
         StageDataList[1].ProbabilityFallSpeedUp     = 5;
-        StageDataList[1].ProbabilityFallSpeedDown   = 4;
-        StageDataList[1].ProbabilityFallBullet      = 1;
-        StageDataList[1].StageLimitTime             = 30;
-        StageDataList[1].CycleToGenerateItems       = 0.5f;
+        StageDataList[1].ProbabilityFallSpeedDown   = 5;
+        StageDataList[1].ProbabilityFallBullet      = 0;
+        StageDataList[1].StageLimitTime             = 20;
+        StageDataList[1].CycleToGenerateItems       = 0.45f;
 
         //HardStage
-        StageDataList[2].ProbabilityFallArrow       = 60;
-        StageDataList[2].ProbabilityFallStar        = 20;
-        StageDataList[2].ProbabilityFallSpeedUp     = 10;
+        StageDataList[2].ProbabilityFallArrow       = 93;
+        StageDataList[2].ProbabilityFallStar        = 0;
+        StageDataList[2].ProbabilityFallSpeedUp     = 2;
         StageDataList[2].ProbabilityFallSpeedDown   = 5;
-        StageDataList[2].ProbabilityFallBullet      = 5;
-        StageDataList[2].StageLimitTime             = 40;
-        StageDataList[2].CycleToGenerateItems       = 0.1f;
+        StageDataList[2].ProbabilityFallBullet      = 0;
+        StageDataList[2].StageLimitTime             = 25;
+        StageDataList[2].CycleToGenerateItems       = 0.2f;
 
         //ステージデータセット
         StageDataContainer.GetComponent<StageDataContainer>().ProbabilityFallArrow 
@@ -80,10 +81,12 @@ public class StageInitializer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKeyDown)
+        if (Input.anyKeyDown && !CheckFlag)
         {
             StageDataContainer.GetComponent<StageDataContainer>().SetBeforePlayStageBeginning(false);
             GameObject.Find("PressAnyKeyText").GetComponent<Image>().enabled = false;
+            GetComponent<AudioSource>().PlayOneShot(PlayMusic);
+            CheckFlag = true;
         }
     }
 }

@@ -12,7 +12,6 @@ public class StageMover : MonoBehaviour
     /// </summary>
     public static int PlayStageType = -1;
 
-
     public void MoveEasyStage()
     {
         PlayStageType = 0;
@@ -23,11 +22,13 @@ public class StageMover : MonoBehaviour
     {
         PlayStageType = 1;
         SceneManager.LoadScene("playScene");
+
     }
 
     public void MoveHardStage()
     {
         PlayStageType = 2;
         SceneManager.LoadScene("playScene");
+
     }
 }
