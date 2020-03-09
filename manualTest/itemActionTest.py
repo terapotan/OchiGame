@@ -13,8 +13,7 @@ class itemActionTest(unittest.TestCase):
         self.assertEqual(input('火の玉は落ちてくるか(y/n)'),'y')
     def test_destroyItem(self):
         self.assertEqual(input('ドロイド君とアイテムが当たった時アイテムは消滅するか(y/n)'),'y')
-    def test_speedDownsEffect(self):
-        self.assertEqual(input('SpeedDownを取ったとき移動速度が遅くなりさらに、ドロイド君の周りに緑のエフェクトが表示される(y/n)'),'y')
+
     
     """
     def test_isCheckedCollisionStar(self):

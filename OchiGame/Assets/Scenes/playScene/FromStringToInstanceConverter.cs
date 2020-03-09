@@ -9,12 +9,13 @@ public class FromStringToInstanceConverter
 
     public FromStringToInstanceConverter()
     {
-        InstancePairs = new Dictionary<string, IPossibleToCollisionProcessWithDroid>();
-        InstancePairs["Arrow"] = new CollisionProcessingWithArrow();
-        InstancePairs["SpeedUp"] = new CollisionProcessingWithSpeedUp();
-        InstancePairs["SpeedDown"] = new CollisionProcessingWithSpeedDown();
-        InstancePairs["Star"] = new CollisionProcessingWithStar();
-        InstancePairs["Bullet"] = new CollisionProcessingWithBullet();
+        InstancePairs               = new Dictionary<string, IPossibleToCollisionProcessWithDroid>();
+
+        InstancePairs["Arrow"]      = new CollisionProcessingWithArrow();
+        InstancePairs["SpeedUp"]    = new CollisionProcessingWithSpeedUp();
+        InstancePairs["SpeedDown"]  = new CollisionProcessingWithSpeedDown();
+        InstancePairs["Star"]       = new CollisionProcessingWithStar();
+        InstancePairs["Bullet"]     = new CollisionProcessingWithBullet();
     }
 
     /// <summary>

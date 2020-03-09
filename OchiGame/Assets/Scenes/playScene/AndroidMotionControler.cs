@@ -7,6 +7,7 @@ public class AndroidMotionControler : MonoBehaviour
 {
     private Rigidbody2D Rigid2D;
     private FromStringToInstanceConverter InstanceConverter;
+    public AudioClip GettingItemSound;
 
     private const float ANDROIDKUN_FORCE_SIZE = 19.8f;
     private float AndroidKunForceSize = ANDROIDKUN_FORCE_SIZE;
@@ -14,6 +15,8 @@ public class AndroidMotionControler : MonoBehaviour
     private const float ANDROIDKUN_FORCE_SIZE_DURING_JUMP = 5.0f;
 
     private const float MAX_SPEED_WALKING_ANDROIDKUN = 6.5f;
+    private float MaxSpeedWalkingAndroidKun = MAX_SPEED_WALKING_ANDROIDKUN;
+
     private const float ANDROIDKUN_JUMPFORCE_SIZE = 280.0f;
 
     private float ANDROIDKUN_INITIAL_Y_POSITION = -2.5f;
@@ -23,18 +26,29 @@ public class AndroidMotionControler : MonoBehaviour
     private const int RIGHT = 1;
     private const int LEFT = -1;
 
+    private GameObject StageDataContainer;
 
     // Start is called before the first frame update
     void Start()
     {
         Rigid2D = GetComponent<Rigidbody2D>();
         InstanceConverter = new FromStringToInstanceConverter();
+
+        StageDataContainer = GameObject.Find("StageDataContainer");
+
         //ANDROIDKUN_INITIAL_Y_POSITION = transform.position.y;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //ゲームプレイが始まる前であれば以下の移動処理を無効化する。
+        //FIXME:この条件文、プレイしているときにもずっと走っている
+        //何とかプレイする前だけこの条件文を走らせたい。
+        if (StageDataContainer.GetComponent<StageDataContainer>().GetBeforePlayStageBeginning())
+        {
+            return;
+        }
         //FIXME:if文だらけで汚いコードだが、完成まで時間がない
         //とりあえず今回はこれ以上ここはいじらないと思うので
         //そのままにしておく。もしここを変更するときがあったら
@@ -59,7 +73,7 @@ public class AndroidMotionControler : MonoBehaviour
 
         float nowSpeedWalkingAndroidkun = Mathf.Abs(Rigid2D.velocity.x + Rigid2D.velocity.y);
 
-        if(nowSpeedWalkingAndroidkun < MAX_SPEED_WALKING_ANDROIDKUN)
+        if(nowSpeedWalkingAndroidkun < MaxSpeedWalkingAndroidKun)
         {
             if (IsDuringJump)
             {
@@ -80,9 +94,23 @@ public class AndroidMotionControler : MonoBehaviour
         }
 
         IPossibleToCollisionProcessWithDroid processWithDroid = InstanceConverter.ToCollisionProcessInstance(GameObjectTag);
-        
-
-
         processWithDroid?.DoCollisionProcess();
+    }
+
+    public void slowDroidSpeed()
+    {
+        MaxSpeedWalkingAndroidKun = MAX_SPEED_WALKING_ANDROIDKUN * 0.35f;
+    }
+
+    public void ReturnToOriginalDroidSpeed()
+    {
+        MaxSpeedWalkingAndroidKun = MAX_SPEED_WALKING_ANDROIDKUN;
+    }
+
+    //FIXME:このメソッドは本来ここにあるべきではない。
+    //当たり判定処理側に持ってくるべきだ。が、時間がないためひとまずこうする。
+    public void PlayGettingItemSound()
+    {
+        GetComponent<AudioSource>().PlayOneShot(GettingItemSound);
     }
 }
